@@ -1,21 +1,19 @@
 #include<stdio.h>
-void main()
+int main()
 {
-	int m,n,s;
+	int m,n;
 	printf("Enter-two integer numbers: ");
 	scanf ("%d %d", &m,&n);
-	s=GCD(m,n);
-	printf("The GCD of the two numbers %d and %d is %d\n",m,n,s);
+	printf("The GCD of the two numbers %d and %d is %d\n",m,n,euclid(m,n));
+	return 0;
 }
-int GCD(int a,int b)
+int euclid(int m,int n)
 {
-	int w=a;
-	int e=b;
-	while (e!=0)
+	while (n!=0)
 	{
-		int r=w%e;
-		w=e;
-		e=r;
+		int r=m%n;
+		m=n;
+		n=r;
 	}
-	return w;
+	return m;
 } 
